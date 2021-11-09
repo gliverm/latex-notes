@@ -1,0 +1,22 @@
+%The purpose of this piece of Latex code is to convert the 
+%xcolor svgnames and x11names into true RGB color definitions.  Colors
+%with dvipsnames are defined in CYMK whereas svgnames
+%and x11names are defined in RGB.  This nuance is taken
+%into consideration.  
+%
+%This 'utility' was created because at the time no reliable 
+%online conversion could be found.  To operate, copy
+%this file into seomthing like texmaker and run XeLaTex to
+%view the output.  Modify the colorname in the convertcolorspec
+%line to output the color RGB values of that color name.
+
+\documentclass{article}
+\usepackage[rgb,svgnames,x11names]{xcolor}
+\begin{document}
+
+%Used to convert svgnames to RGB - do not use dvipsnames
+%\selectcolormodel{rgb}
+\convertcolorspec{named}{HotPink}{RGB}\tmp
+RGB of the color is: \tmp   \colorbox[RGB]{\tmp}{color sample}
+
+\end{document}
